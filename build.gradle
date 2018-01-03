@@ -45,7 +45,7 @@ publishing {
             customizePom(pom, rootProject)
             groupId 'com.github.mautini'
             artifactId 'schemaorg-java'
-            version '1.0.0'
+            version '1.0.1'
 
             from components.java
 
@@ -58,6 +58,13 @@ publishing {
                     classifier = null
                     extension = 'pom.asc'
                 }
+            }
+
+            artifact(sourceJar) {
+                classifier = 'sources'
+            }
+            artifact(javadocJar) {
+                classifier = 'javadoc'
             }
 
             // sign the artifacts
