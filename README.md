@@ -18,10 +18,10 @@ and to continue its development.
 
 ## <a name='Overview'>Overview</a>
 
-The Schema.org Client Library for Java is a library for creating [schema.org]
-(http://schema.org) entities. The entities can be easily serialized and
-deserialized with [JSON-LD](https://json-ld.org) format by using the JSON-LD
-serializer in the library.
+The Schema.org Client Library for Java is a library for creating
+[schema.org](http://schema.org) entities. The entities can be easily
+serialized and deserialized with [JSON-LD](https://json-ld.org) format by
+using the JSON-LD serializer in the library.
 
 ## <a name='Highlighted_Features'>Library Highlights</a>
 
@@ -39,9 +39,9 @@ The library has the following highlights:
 
 ## <a name='Quick_Start'>Quick Start</a>
 
-Below is a simple example of creating schema.org [Thing]
-(http://schema.org/Thing) object, serialize it into JSON-LD format and
-deserialize JSON-LD back to a Thing object.
+Below is a simple example of creating schema.org [Thing](http://schema.org/Thing)
+object, serialize it into JSON-LD format and deserialize JSON-LD back to a
+Thing object.
 
 ```java
 JsonLdSerializer serializer = new JsonLdSerializer(true /* setPrettyPrinting */);
@@ -96,8 +96,7 @@ be set in the corresponding schema.org type. Multiple values can be added to a
 property as documented by schema.org. The `build()` method should be called to
 create an immutable concrete instance of that type. A `get[PropertyName]List`
 method is defined for each property. The `get[PropertyName]List` method will
-return an [`ImmutableList`]
-(https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/collect/ImmutableList.html)
+return an [`ImmutableList`](https://google.github.io/guava/releases/snapshot/api/docs/com/google/common/collect/ImmutableList.html)
 containing all the values for the specific property. In order to add any custom
 property into any schema.org type, the `addProperty` and `getProperty` methods
 are defined in the interface for each schema.org type.
@@ -155,18 +154,15 @@ enum values:
 All the schema.org type builders also support setting the values for JSON-LD
 keywords. Following methods are defined in the builder interface:
 
-*   `addJsonLdContext` (Adds the [@context]
-    (https://www.w3.org/TR/json-ld/#the-context) with a `JsonLdContext`. The
-    [@base](https://www.w3.org/TR/json-ld/#base-iri) could be set by building a
-    `JsonLdContext` using `JsonLdFactory.newContextBuilder()`. Examples can be
-    found in [Example Code](#Example_Code). More JSON-LD keywords and custom
-    term definition will be supported in future release.)
-*   `setJsonLdId` (Sets the [@id]
-    (https://www.w3.org/TR/json-ld/#node-identifiers) with the given string
-    value.)
-*   `setJsonLdReverse` (Sets the [@reverse]
-    (https://www.w3.org/TR/json-ld/#reverse-properties) relationship between the
-    current entity and the target entity.)
+*   `addJsonLdContext` (Adds the [@context](https://www.w3.org/TR/json-ld/#the-context)
+    with a `JsonLdContext`. The [@base](https://www.w3.org/TR/json-ld/#base-iri)
+    could be set by building a `JsonLdContext` using `JsonLdFactory.newContextBuilder()`.
+    Examples can be found in [Example Code](#Example_Code).
+    More JSON-LD keywords and custom term definition will be supported in future release.)
+*   `setJsonLdId` (Sets the [@id](https://www.w3.org/TR/json-ld/#node-identifiers)
+    with the given string value.)
+*   `setJsonLdReverse` (Sets the [@reverse](https://www.w3.org/TR/json-ld/#reverse-properties)
+    relationship between the current entity and the target entity.)
 *   The JSON-LD serializer is able to determine appropriate `@context` url
     automatically based on serialized objects. So users don't need to explicitly
     set the `@context` URL.
@@ -294,14 +290,12 @@ Limitations of current JSON-LD deserialization are given below:
     terms. It assumes the context is always "http://schema.org" or
     "http://schema.googleapis.com". And all relative IRIs are resolved relative
     to "http://schema.org/" or "http://schema.googleapis.com/".
-*   The parser doesn't support [compact IRI]
-    (https://www.w3.org/TR/json-ld/#compact-iris).
+*   The parser doesn't support [compact IRI](https://www.w3.org/TR/json-ld/#compact-iris).
 *   The JSON-LD format does not contain sufficient information to determine the
     exact subtype of the `DataType` hierarchy. The parser does not currently
-    understand the [coercion rule]
-    (https://www.w3.org/TR/json-ld/#type-coercion). Therefore, all numerical
-    values are parsed on a best-effort basis to the numerical type that the
-    property accepts. All text values are parsed to be
+    understand the [coercion rule](https://www.w3.org/TR/json-ld/#type-coercion).
+    Therefore, all numerical values are parsed on a best-effort basis to the
+    numerical type that the property accepts. All text values are parsed to be
     `com.google.schemaorg.core.datatype.Text`. You should not expect to see
     other types such as `URL`, `Date`, `Time`, `DateTime`, etc..
 
